@@ -1,23 +1,23 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "blogger",
+    "password": "root",
+    "database": "shoe",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "port": 32768
+    "port": 3306
   },
   "test": {
     "username": "root",
-    "password": null,
-    "database": "database_test",
+    "password": "root",
+    "database": "shoe_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": null,
-    "database": "database_production",
+    "password": "root",
+    "database": "shoe_production",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
