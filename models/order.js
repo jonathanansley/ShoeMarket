@@ -1,5 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
   var Order = sequelize.define("Order", {
+    date: DataTypes.STRING,
+    quantity: DataTypes.STRING,
     title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -7,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
-    body: {
+    comment: {
       type: DataTypes.TEXT,
       allowNull: false,
       len: [1]
@@ -15,8 +17,8 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Order.associate = function(models) {
-    // We're saying that a Post should belong to an Author
-    // A Post can't be created without an Author due to the foreign key constraint
+    // We're saying that an Order should belong to a Client.
+    // An Order cannot be created without a Client due to the foreign key constraint.
     Order.belongsTo(models.Client, {
       foreignKey: {
         allowNull: false

@@ -1,7 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
   var Client = sequelize.define("Client", {
     // Giving the Author model a name of type STRING
-    name: DataTypes.STRING
+    name: DataTypes.STRING,
+    address: DataTypes.STRING,
+    phone: DataTypes.STRING,
+    email: DataTypes.STRING
   });
 
   Client.associate = function(models) {
