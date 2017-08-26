@@ -1,17 +1,24 @@
 module.exports = function(sequelize, DataTypes) {
   var Shoe = sequelize.define("Shoe", {
-    title: {
+    type: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
       }
     },
-    body: {
-      type: DataTypes.TEXT,
+
+    size: {
+      type: DataTypes.STRING,
       allowNull: false,
       len: [1]
-    }
+    },
+    phone: DataTypes.STRING,
+    email: DataTypes.STRING
+    // msrp
+    // quantity
+    // seller price
+
   });
 
   Shoe.associate = function(models) {
