@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [1]
+        len: [1, 60]
       }
     },
 
@@ -13,17 +13,34 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       len: [1]
     },
-    phone: DataTypes.STRING,
-    email: DataTypes.STRING
-    // msrp
-    // quantity
-    // seller price
 
+    phone: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      len: [10]
+    },
+    
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      len: [2, 150]
+    },
+    
+    quantity: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      default: 0
+    },
+
+    msrp: DataTypes.INTEGER, // I had trouble getting DECIMAL to work.
+
+    seller_price: DataTypes.INTEGER, // I had trouble getting DECIMAL to work.
+
+  }, {
+    timestamps: false
   });
 
   Shoe.associate = function(models) {
-    // We're saying that a Post should belong to an Author
-    // A Post can't be created without an Author due to the foreign key constraint
     Shoe.belongsTo(models.Order, {
       foreignKey: {
         allowNull: false
