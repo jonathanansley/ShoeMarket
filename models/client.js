@@ -1,15 +1,32 @@
 module.exports = function(sequelize, DataTypes) {
+  
   var Client = sequelize.define("Client", {
-    // Giving the Author model a name of type STRING
+
     name: DataTypes.STRING,
+    
     address: DataTypes.STRING,
-    phone: DataTypes.STRING,
-    email: DataTypes.STRING
-  });
+
+    phone: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [10]
+      }
+    }, // end of phone
+    
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      len: [3, 150]
+    }, // end of email
+
+  }, // end of columns
+
+    {
+      timestamps: false
+    }); // end of Client table
 
   Client.associate = function(models) {
-    // Associating Author with Posts
-    // When an Author is deleted, also delete any associated Posts
     Client.hasMany(models.Order, {
       onDelete: "cascade"
     });

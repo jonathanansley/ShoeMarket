@@ -1,30 +1,42 @@
 module.exports = function(sequelize, DataTypes) {
+  
   var Order = sequelize.define("Order", {
-    date: DataTypes.STRING,
-    quantity: DataTypes.STRING,
-    title: {
-      type: DataTypes.STRING,
+
+    date_order_placed: {
+      type: DataTypes.DATE, // I had trouble getting type: Sequelize.DATE to
       allowNull: false,
-      validate: {
-        len: [1]
-      }
-    },
+      defaultValue: new Date()
+    }, // end of date_order_placed
+
+    quantity: DataTypes.STRING,
+
     comment: {
       type: DataTypes.TEXT,
       allowNull: false,
       len: [1]
-    }
-  });
+    } // end of comment
+
+  }, // end of columns
+
+  {
+    timestamps: false
+  }); // end of Order table
 
   Order.associate = function(models) {
-    // We're saying that an Order should belong to a Client.
-    // An Order cannot be created without a Client due to the foreign key constraint.
     Order.belongsTo(models.Client, {
       foreignKey: {
         allowNull: false
       }
     });
   };
+
+  // Order.associate = function(models) {
+  //   Order.hasMany(models.Shoe, {
+  //     foreignKey: {
+  //       allowNull: false
+  //     }
+  //   });
+  // };
 
   return Order;
 };
