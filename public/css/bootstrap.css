@@ -244,6 +244,10 @@ template {
   display: none;
 }
 
+card-block {
+  display: inline-block;
+}
+
 [hidden] {
   display: none;
 }
@@ -2242,7 +2246,7 @@ pre code {
 
 .form-control {
   display: block;
-  width: 100%;
+  width: 5%;
   padding: 0.5rem 0.75rem;
   font-size: 1rem;
   line-height: 1.25;
