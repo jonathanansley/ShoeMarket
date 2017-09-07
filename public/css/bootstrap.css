@@ -244,6 +244,10 @@ template {
   display: none;
 }
 
+card-block {
+  display: inline-block;
+}
+
 [hidden] {
   display: none;
 }
@@ -2241,8 +2245,8 @@ pre code {
 }
 
 .form-control {
-  display: block;
-  width: 100%;
+  display: inline-block;
+  width: 5%;
   padding: 0.5rem 0.75rem;
   font-size: 1rem;
   line-height: 1.25;
@@ -3494,7 +3498,8 @@ tbody.collapse.show {
 .input-group-addon:not(:first-child):not(:last-child),
 .input-group-btn:not(:first-child):not(:last-child),
 .input-group .form-control:not(:first-child):not(:last-child) {
-  border-radius: 0;
+  border-radius: 10px;
+  width: 3%;
 }
 
 .input-group-addon,
