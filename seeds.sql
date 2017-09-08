@@ -18,30 +18,30 @@ VALUES	(1, 'Harvey Smith', '123 First St', '202-555-9987', 'Harvey@gmail.com'),
 
 --
 INSERT INTO orders (id, date_order_placed, quantity, comment, ClientID)
-VALUES	(1, '2017-07-01', 2, 'Customer prefers text messages.', 1),
+VALUES	(1, '2017-06-12', 2, 'Customer prefers text messages.', 1),
 		(2, '2017-07-02', 1, 'lives in Alexandria', 2),
 		(3, '2017-08-03', 1, 'works near Foggy Bottom', 3),
 		(4, '2017-09-04', 2, 'moving out of town soon', 4),
 		(5, '2017-09-05', 1, 'works near Ballston', 5),
         (6, '2017-09-05', 3, 'potential for future sales', 6),
-        (7, '2017-09-05', 1, 'works near Court House', 7),
-        (8, '2017-09-05', 2, 'lives near Clarendon', 8),
-        (9, '2017-09-05', 1, 'lives near Farragut West', 9),
-        (10, '2017-09-05', 1, 'Lives near Springfield', 10);
+        (7, '2017-09-06', 1, 'works near Court House', 7),
+        (8, '2017-09-08', 2, 'lives near Clarendon', 8),
+        (9, '2017-09-09', 1, 'lives near Farragut West', 9),
+        (10, '2017-09-10', 1, 'Lives near Springfield', 10);
 
 
 
 --
 INSERT INTO shoes (id, type, size, quantity, msrp, seller_price, OrderID)
 VALUES	(1, 'Jordan 2', 10, 2, 159, 225, 5),
-		(2, 'Jordan 4', 12, 1, 199, 245, 4),
-		(3, 'Jordan 6', 15, 6, 182, 225, 3),
-		(4, 'Jordan 11', 10, 5, 200, 300, 2),
-		(5, 'Jordan 13', 13, 3, 210, 310, 1),
-        (5, 'Jordan 13', 13, 3, 220, 320, 10),
-        (5, 'Jordan 13', 13, 3, 250, 350, 9),
-        (5, 'Jordan 13', 13, 3, 190, 290, 8),
-        (5, 'Jordan 13', 13, 3, 190, 290, 7),
-        (5, 'Jordan 13', 13, 3, 200, 300, 6);
+	(2, 'Jordan 4', 12, 1, 199, 245, 4),
+	(3, 'Jordan 6', 15, 3, 182, 225, 3),
+	(4, 'Jordan 11', 10, 2, 200, 300, 2),
+	(5, 'Jordan 13', 13, 3, 210, 310, 1),
+        (5, 'LeBron', 13, 3, 220, 320, 10),
+        (5, 'KD', 14, 1, 250, 350, 9),
+        (5, 'Kyrie', 13, 1, 190, 290, 8),
+        (5, 'Jordan 3', 12, 1, 190, 290, 7),
+        (5, 'Jordan 10', 11, 3, 200, 300, 6);
 --
 
