@@ -58,3 +58,21 @@ Your project should:
 * Use an existing public dataset to power the database (This is probably not important.)
 
 * Create a migration strategy for sharing data across team members.
+
+
+
+#### JAWS DB:
+Connection Info
+Connection String
+
+mysql://cba083b232k8bkub:v30zipawvqhy85bi@otmaa16c1i9nwrek.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/lwi3r2j0i704lhq3
+
+
+You can use your connection information to connect manually through a client such as HeidiSQL to administer your database.
+
+Property	Value	Action
+Host	otmaa16c1i9nwrek.cbetxkdyhwsb.us-east-1.rds.amazonaws.com	
+Username	cba083b232k8bkub	
+Password	v30zipawvqhy85bi	
+Reset
+Port	3306
