@@ -1,6 +1,7 @@
 /*global $, document, LINECHARTEXMPLE*/
 $(document).ready(function () {
 
+
     'use strict';
 
     var brandPrimary = 'rgba(51, 179, 90, 1)';
@@ -12,6 +13,21 @@ $(document).ready(function () {
         POLARCHARTEXMPLE  = $('#polarChartExample');
 
 
+
+
+ var currentURL = window.location.origin;
+
+  $.ajax({ url: currentURL + "/chartData" , method: "GET"})
+
+  .done(function(data){
+
+
+    console.log(currentURL);
+
+    console.log(data)
+
+var test = data.line[0]
+var test2  = data.line[1]
     var lineChartExample = new Chart(LINECHARTEXMPLE, {
         type: 'line',
         data: {
@@ -37,9 +53,11 @@ $(document).ready(function () {
                     pointHoverBorderWidth: 2,
                     pointRadius: 1,
                     pointHitRadius: 10,
+
                     data: [500, 200, 800, 100, 1100, 590, 600, 800, 400, 1200, 1300, 1350],
                     spanGaps: false
                 },
+              
                 // {
                 //     label: "Data Set Two",
                 //     fill: true,
@@ -63,10 +81,28 @@ $(document).ready(function () {
                 //     data: [65, 59, 30, 81, 56, 55, 40],
                 //     spanGaps: false
                 // }
+
             ]
         }
     });
 
+});
+
+
+      var currentURL = window.location.origin;
+
+  $.ajax({ url: currentURL + "/chartData" , method: "GET"})
+
+  .done(function(data){
+
+
+
+    console.log(currentURL);
+
+    console.log(data)
+  
+
+var test = data.pie
     var pieChartExample = new Chart(PIECHARTEXMPLE, {
         type: 'doughnut',
         data: {
@@ -78,8 +114,12 @@ $(document).ready(function () {
             ],
             datasets: [
                 {
+
                     data: [300, 50, 100, 20],
                     borderWidth: [1, 1, 1, 1],
+
+                    data: test,
+                    borderWidth: [1, 1, 1],
                     backgroundColor: [
                         brandPrimary,
                         "rgba(75,192,192,1)",
@@ -93,6 +133,7 @@ $(document).ready(function () {
                 }]
             }
     });
+
 
     var pieChartExample = {
         responsive: true
@@ -194,40 +235,9 @@ $(document).ready(function () {
     };
 
 
-    var radarChartExample = new Chart(RADARCHARTEXMPLE, {
-        type: 'radar',
-        data: {
-            labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling"],
-            datasets: [
-                {
-                    label: "My First dataset",
-                    backgroundColor: "rgba(179,181,198,0.2)",
-                    borderWidth: 2,
-                    borderColor: "rgba(179,181,198,1)",
-                    pointBackgroundColor: "rgba(179,181,198,1)",
-                    pointBorderColor: "#fff",
-                    pointHoverBackgroundColor: "#fff",
-                    pointHoverBorderColor: "rgba(179,181,198,1)",
-                    data: [65, 59, 90, 81, 56, 55]
-                },
-                {
-                    label: "My Second dataset",
-                    backgroundColor: "rgba(51, 179, 90, 0.2)",
-                    borderWidth: 2,
-                    borderColor: "rgba(51, 179, 90, 1)",
-                    pointBackgroundColor: "rgba(51, 179, 90, 1)",
-                    pointBorderColor: "#fff",
-                    pointHoverBackgroundColor: "#fff",
-                    pointHoverBorderColor: "rgba(51, 179, 90, 1)",
-                    data: [28, 48, 40, 19, 96, 27]
-                }
-            ]
-        }
-    });
-    var radarChartExample = {
+// ajax call
+    var pieChartExample = {
         responsive: true
     };
-
-
-
 });
+    
