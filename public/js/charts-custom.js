@@ -40,7 +40,9 @@ var test = data.line[0]
     var lineChartExample = new Chart(LINECHARTEXMPLE, {
         type: 'line',
         data: {
+
             labels: ["January", "February", "March", "April", "May", "June", "July","August","September","November","December"],
+
             datasets: [
                 {
                     label: "Data Set One",
@@ -88,6 +90,7 @@ var test = data.line[0]
                 //     data: test2,
                 //     spanGaps: false
                 // }
+
             ]
         }
     });
