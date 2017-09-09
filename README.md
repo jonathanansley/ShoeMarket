@@ -9,7 +9,7 @@
 * Michael Megarbane
 
 
-###Links:
+### Links:
  * [GitHub Repository](https://github.com/johnsaugy/SurchPort)
  * [Heroku](https://fierce-reef-37071.herokuapp.com/)
  * [ShoeMarket Presentation Slides](https://docs.google.com/presentation/d/10eg53H8cBBh-CqUtXjfIU4_xKamsFfYzyK1UxMCKnoo/edit#slide=id.p)
