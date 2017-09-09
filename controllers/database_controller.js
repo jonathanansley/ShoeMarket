@@ -2,8 +2,7 @@
 var express = require("express");
 var router = express.Router();
 var db = require("../models")
-
-
+var Sequelize = require("sequelize")  
 module.exports = function(app) {
 
 
@@ -22,16 +21,54 @@ module.exports = function(app) {
 
 
 
-app.get("/chartData", function(req, res) {
 
-// db.Shoe.findAll({
 
-//   attributes:['quantity','date_order_placed','msrp','seller_price'],
+
+
+app.get("/chartDataLine", function(req, res) {
+
+db.Order.findAll({
+
+  // attributes:['quantity','date_order_placed','msrp','seller_price'],
+
+  include:[{
+
+    model: db.Shoe,
+    // where:{id:Sequelize.col('order.id')}
+
+  }]
+
+
+}).then(function(dbShoes) {
+
+  
+
+      // res.json(dbShoes);
+    });
+
+
+  
+var test = 
+{
+  pie:[200, 100, 300],
+  line:[[ 20, 59, 30, 81, 40, 55,535,2000,300,1000,1200,900],[10, 30, 90, 15, 56, 20]],
+}
+
+res.json(test)
+
+ });
+
+
+app.get("/chartDataPie", function(req, res) {
+
+// db.Order.findAll({
+
+//   // attributes:['quantity','date_order_placed','msrp','seller_price'],
 
 //   include:[{
 
-//     model: Order,
-//     where:{id:Sequelize.col('order.id')}
+//     model: db.Shoe,
+//     // where:{id:Sequelize.col('order.id')}
 
 //   }]
 
@@ -39,21 +76,27 @@ app.get("/chartData", function(req, res) {
 // }).then(function(dbShoes) {
 
   
-
-//       res.json(dbShoes);
-//     });
-
-
-
-
 var test = 
 {
   pie:[200, 100, 300],
-  line:[[20, 59, 30, 81, 40, 55],[10, 30, 90, 15, 56, 20]],
+  line:[[ 20, 59, 30, 81, 40, 55,535,2000,300,1000,1200,900],[10, 30, 90, 15, 56, 20]],
 }
 
-    res.json(test);
-  });
+      res.json(test);
+  
+
+ });
+
+
+
+
+
+
+
+
+
+    // res.json(test);
+ 
 
 
 // app.post("/")
@@ -62,26 +105,3 @@ var test =
 }
 
 
-
-// router.post('/burgers', function(req, res) {
-//   burger.create([
-//     'burger_name'
-//   ], [
-//     req.body.burger_name
-//   ], function(data) {
-//     res.redirect('/');
-//   });
-// });
-
-// router.put('/burgers/:id', function(req, res) {
-//   var condition = 'id = ' + req.params.id;
-
-//   burger.update({
-//     devoured: true
-//   }, condition, function(data) {
-//     res.redirect('/');
-//   });
-// });
-
-// // Export routes for server.js to use.
-// module.exports = router;

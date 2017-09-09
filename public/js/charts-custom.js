@@ -15,10 +15,10 @@ $(document).ready(function () {
     var lineChartExample = new Chart(LINECHARTEXMPLE, {
         type: 'line',
         data: {
-            labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"],
+            labels: ["January", "February", "March", "April", "May", "June", "July"],
             datasets: [
                 {
-                    label: "Profits in USD Per Month",
+                    label: "Data Set One",
                     fill: true,
                     lineTension: 0.3,
                     backgroundColor: "rgba(51, 179, 90, 0.38)",
@@ -37,33 +37,32 @@ $(document).ready(function () {
                     pointHoverBorderWidth: 2,
                     pointRadius: 1,
                     pointHitRadius: 10,
-                    data: [550, 420, 340, 800, 925, 220, 1110, 500, 550, 1100, 1400, 1300],
+                    data: [50, 20, 40, 31, 32, 22, 10],
+                    spanGaps: false
+                },
+                {
+                    label: "Data Set Two",
+                    fill: true,
+                    lineTension: 0.3,
+                    backgroundColor: "rgba(75,192,192,0.4)",
+                    borderColor: "rgba(75,192,192,1)",
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    borderWidth: 1,
+                    pointBorderColor: "rgba(75,192,192,1)",
+                    pointBackgroundColor: "#fff",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                    pointHoverBorderColor: "rgba(220,220,220,1)",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
+                    data: [65, 59, 30, 81, 56, 55, 40],
                     spanGaps: false
                 }
-                // ,
-                // {
-                //     label: "Data Set Two",
-                //     fill: true,
-                //     lineTension: 0.3,
-                //     backgroundColor: "rgba(75,192,192,0.4)",
-                //     borderColor: "rgba(75,192,192,1)",
-                //     borderCapStyle: 'butt',
-                //     borderDash: [],
-                //     borderDashOffset: 0.0,
-                //     borderJoinStyle: 'miter',
-                //     borderWidth: 1,
-                //     pointBorderColor: "rgba(75,192,192,1)",
-                //     pointBackgroundColor: "#fff",
-                //     pointBorderWidth: 1,
-                //     pointHoverRadius: 5,
-                //     pointHoverBackgroundColor: "rgba(75,192,192,1)",
-                //     pointHoverBorderColor: "rgba(220,220,220,1)",
-                //     pointHoverBorderWidth: 2,
-                //     pointRadius: 1,
-                //     pointHitRadius: 10,
-                //     data: [65, 59, 30, 81, 56, 55, 40],
-                //     spanGaps: false
-                // }
             ]
         }
     });
@@ -72,15 +71,14 @@ $(document).ready(function () {
         type: 'doughnut',
         data: {
             labels: [
-                "Jordan",
-                "LeBron",
-                "KD", 
-                "Kyrie"
+                "First",
+                "Second",
+                "Third"
             ],
             datasets: [
                 {
-                    data: [300, 50, 100, 40],
-                    borderWidth: [1, 1, 1, 1],
+                    data: [300, 50, 100],
+                    borderWidth: [1, 1, 1],
                     backgroundColor: [
                         brandPrimary,
                         "rgba(75,192,192,1)",
