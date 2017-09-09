@@ -3,12 +3,12 @@ module.exports = function(sequelize, DataTypes) {
   var Order = sequelize.define("Order", {
 
     date_order_placed: {
-      type: DataTypes.DATE, // I had trouble getting type: Sequelize.DATE to
+      type: DataTypes.DATE, // I had trouble getting type: Sequelize.DATE to work.
       allowNull: false,
       defaultValue: new Date()
     }, // end of date_order_placed
 
-    quantity: DataTypes.STRING,
+    // quantity: DataTypes.STRING,
 
     comment: {
       type: DataTypes.TEXT,
