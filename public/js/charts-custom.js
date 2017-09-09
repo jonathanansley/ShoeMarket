@@ -1,7 +1,6 @@
 /*global $, document, LINECHARTEXMPLE*/
 $(document).ready(function () {
 
-
     'use strict';
 
     var brandPrimary = 'rgba(51, 179, 90, 1)';
@@ -13,21 +12,6 @@ $(document).ready(function () {
         POLARCHARTEXMPLE  = $('#polarChartExample');
 
 
-
-
- var currentURL = window.location.origin;
-
-  $.ajax({ url: currentURL + "/chartData" , method: "GET"})
-
-  .done(function(data){
-
-
-    console.log(currentURL);
-
-    console.log(data)
-
-var test = data.line[0]
-var test2  = data.line[1]
     var lineChartExample = new Chart(LINECHARTEXMPLE, {
         type: 'line',
         data: {
@@ -53,11 +37,10 @@ var test2  = data.line[1]
                     pointHoverBorderWidth: 2,
                     pointRadius: 1,
                     pointHitRadius: 10,
-
-                    data: [500, 200, 800, 100, 1100, 590, 600, 800, 400, 1200, 1300, 1350],
+                    data: [550, 420, 340, 800, 925, 220, 1110, 500, 550, 1100, 1400, 1300],
                     spanGaps: false
-                },
-              
+                }
+                // ,
                 // {
                 //     label: "Data Set Two",
                 //     fill: true,
@@ -81,45 +64,23 @@ var test2  = data.line[1]
                 //     data: [65, 59, 30, 81, 56, 55, 40],
                 //     spanGaps: false
                 // }
-
             ]
         }
     });
 
-});
-
-
-      var currentURL = window.location.origin;
-
-  $.ajax({ url: currentURL + "/chartData" , method: "GET"})
-
-  .done(function(data){
-
-
-
-    console.log(currentURL);
-
-    console.log(data)
-  
-
-var test = data.pie
     var pieChartExample = new Chart(PIECHARTEXMPLE, {
         type: 'doughnut',
         data: {
             labels: [
-                "Jordans",
+                "Jordan",
                 "LeBron",
-                "Kyrie",
-                "KD"
+                "KD", 
+                "Kyrie"
             ],
             datasets: [
                 {
-
-                    data: [300, 50, 100, 20],
+                    data: [300, 50, 100, 40],
                     borderWidth: [1, 1, 1, 1],
-
-                    data: test,
-                    borderWidth: [1, 1, 1],
                     backgroundColor: [
                         brandPrimary,
                         "rgba(75,192,192,1)",
@@ -134,7 +95,6 @@ var test = data.pie
             }
     });
 
-
     var pieChartExample = {
         responsive: true
     };
@@ -142,7 +102,7 @@ var test = data.pie
     var barChartExample = new Chart(BARCHARTEXMPLE, {
         type: 'bar',
         data: {
-            labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"],
+            labels: ["January", "February", "March", "April", "May", "June", "July"],
             datasets: [
                 {
                     label: "Data Set 1",
@@ -153,12 +113,7 @@ var test = data.pie
                         'rgba(51, 179, 90, 0.6)',
                         'rgba(51, 179, 90, 0.6)',
                         'rgba(51, 179, 90, 0.6)',
-                        'rgba(51, 179, 90, 0.6)',
-                        'rgba(51, 179, 90, 0.6)',
-                        'rgba(51, 179, 90, 0.6)',
-                        'rgba(51, 179, 90, 0.6)',
-                        'rgba(51, 179, 90, 0.6)',
-                        'rgba(51, 179, 90, 0.6)',
+                        'rgba(51, 179, 90, 0.6)'
                     ],
                     borderColor: [
                         'rgba(51, 179, 90, 1)',
@@ -167,39 +122,34 @@ var test = data.pie
                         'rgba(51, 179, 90, 1)',
                         'rgba(51, 179, 90, 1)',
                         'rgba(51, 179, 90, 1)',
-                        'rgba(51, 179, 90, 1)',
-                        'rgba(51, 179, 90, 1)',
-                        'rgba(51, 179, 90, 1)',
-                        'rgba(51, 179, 90, 1)',
-                        'rgba(51, 179, 90, 1)',
-                        'rgba(51, 179, 90, 1)',
+                        'rgba(51, 179, 90, 1)'
                     ],
                     borderWidth: 1,
-                    data: [65, 59, 80, 81, 56, 55, 40, 65, 59, 80, 81, 56],
+                    data: [65, 59, 80, 81, 56, 55, 40],
                 },
-                // {
-                //     label: "Data Set 2",
-                //     backgroundColor: [
-                //         'rgba(203, 203, 203, 0.6)',
-                //         'rgba(203, 203, 203, 0.6)',
-                //         'rgba(203, 203, 203, 0.6)',
-                //         'rgba(203, 203, 203, 0.6)',
-                //         'rgba(203, 203, 203, 0.6)',
-                //         'rgba(203, 203, 203, 0.6)',
-                //         'rgba(203, 203, 203, 0.6)'
-                //     ],
-                //     borderColor: [
-                //         'rgba(203, 203, 203, 1)',
-                //         'rgba(203, 203, 203, 1)',
-                //         'rgba(203, 203, 203, 1)',
-                //         'rgba(203, 203, 203, 1)',
-                //         'rgba(203, 203, 203, 1)',
-                //         'rgba(203, 203, 203, 1)',
-                //         'rgba(203, 203, 203, 1)'
-                //     ],
-                //     borderWidth: 1,
-                //     data: [35, 40, 60, 47, 88, 27, 30],
-                // }
+                {
+                    label: "Data Set 2",
+                    backgroundColor: [
+                        'rgba(203, 203, 203, 0.6)',
+                        'rgba(203, 203, 203, 0.6)',
+                        'rgba(203, 203, 203, 0.6)',
+                        'rgba(203, 203, 203, 0.6)',
+                        'rgba(203, 203, 203, 0.6)',
+                        'rgba(203, 203, 203, 0.6)',
+                        'rgba(203, 203, 203, 0.6)'
+                    ],
+                    borderColor: [
+                        'rgba(203, 203, 203, 1)',
+                        'rgba(203, 203, 203, 1)',
+                        'rgba(203, 203, 203, 1)',
+                        'rgba(203, 203, 203, 1)',
+                        'rgba(203, 203, 203, 1)',
+                        'rgba(203, 203, 203, 1)',
+                        'rgba(203, 203, 203, 1)'
+                    ],
+                    borderWidth: 1,
+                    data: [35, 40, 60, 47, 88, 27, 30],
+                }
             ]
         }
     });
@@ -235,9 +185,40 @@ var test = data.pie
     };
 
 
-// ajax call
-    var pieChartExample = {
+    var radarChartExample = new Chart(RADARCHARTEXMPLE, {
+        type: 'radar',
+        data: {
+            labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling"],
+            datasets: [
+                {
+                    label: "My First dataset",
+                    backgroundColor: "rgba(179,181,198,0.2)",
+                    borderWidth: 2,
+                    borderColor: "rgba(179,181,198,1)",
+                    pointBackgroundColor: "rgba(179,181,198,1)",
+                    pointBorderColor: "#fff",
+                    pointHoverBackgroundColor: "#fff",
+                    pointHoverBorderColor: "rgba(179,181,198,1)",
+                    data: [65, 59, 90, 81, 56, 55]
+                },
+                {
+                    label: "My Second dataset",
+                    backgroundColor: "rgba(51, 179, 90, 0.2)",
+                    borderWidth: 2,
+                    borderColor: "rgba(51, 179, 90, 1)",
+                    pointBackgroundColor: "rgba(51, 179, 90, 1)",
+                    pointBorderColor: "#fff",
+                    pointHoverBackgroundColor: "#fff",
+                    pointHoverBorderColor: "rgba(51, 179, 90, 1)",
+                    data: [28, 48, 40, 19, 96, 27]
+                }
+            ]
+        }
+    });
+    var radarChartExample = {
         responsive: true
     };
+
+
+
 });
-    
