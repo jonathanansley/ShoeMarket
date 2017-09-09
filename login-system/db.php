@@ -1,7 +1,7 @@
 <?php
 /* Database connection settings */
-$host = 'localhost';
+$host = '127.0.0.1';
 $user = 'root';
-$pass = 'mypass123';
+$pass = '';
 $db = 'accounts';
 $mysqli = new mysqli($host,$user,$pass,$db) or die($mysqli->error);
