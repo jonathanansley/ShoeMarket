@@ -32,13 +32,20 @@ module.exports = function(sequelize, DataTypes) {
     timestamps: false
   }); // end of Shoe table
 
-  Shoe.associate = function(models) {
-    Shoe.belongsTo(models.Order, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
+  
 
   return Shoe;
 };
+
+
+
+// var order = {
+//   date: '',
+//   shoesInOrder: [
+//     quantity: 5,
+//     item: {
+//       price: 5,
+      
+//     }
+//   ]
+// }
