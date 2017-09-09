@@ -1,3 +1,6 @@
+const Client = require("./client.js")
+const Shoe = require("./shoe.js")
+
 module.exports = function(sequelize, DataTypes) {
   
   var Order = sequelize.define("Order", {
@@ -14,13 +17,13 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TEXT,
       allowNull: false,
       len: [1]
-    } // end of comment
+    }, // end of comment
 
-  }, // end of columns
-
-  {
-    timestamps: false
-  }); // end of Order table
+   },// end of columns
+   
+   {
+     timestamps: false    
+   }); // end of Order table
 
   Order.associate = function(models) {
     Order.belongsTo(models.Client, {
@@ -28,7 +31,17 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false
       }
     });
-  };
+
+      
+  Order.hasMany(models.Shoe, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+
+  }
+
+
 
   // Order.associate = function(models) {
   //   Order.hasMany(models.Shoe, {
@@ -40,3 +53,4 @@ module.exports = function(sequelize, DataTypes) {
 
   return Order;
 };
+

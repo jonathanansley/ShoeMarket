@@ -14,24 +14,35 @@ $(document).ready(function () {
 
 
 
-
  var currentURL = window.location.origin;
 
-  $.ajax({ url: currentURL + "/chartData" , method: "GET"})
+  $.ajax({ url: currentURL + "/chartDataLine" , method: "GET"})
 
   .done(function(data){
 
 
-    console.log(currentURL);
+    for (var i = data.length - 1; i >= 0; i--) {
 
-    console.log(data)
+        console.log("hi")
+
+        // for (var j = data.length - 1; j >= 0; j--) {
+            
+
+        //     console.log(data[i].Shoes[0].type
+
+        //         console.log("hi")
+        // }
+       
+    }
+
 
 var test = data.line[0]
-var test2  = data.line[1]
     var lineChartExample = new Chart(LINECHARTEXMPLE, {
         type: 'line',
         data: {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
+
+            labels: ["January", "February", "March", "April", "May", "June", "July","August","September","November","December"],
+
             datasets: [
                 {
                     label: "Data Set One",
@@ -56,29 +67,30 @@ var test2  = data.line[1]
                     data: test,
                     spanGaps: false
                 },
-                {
-                    label: "Data Set Two",
-                    fill: true,
-                    lineTension: 0.3,
-                    backgroundColor: "rgba(75,192,192,0.4)",
-                    borderColor: "rgba(75,192,192,1)",
-                    borderCapStyle: 'butt',
-                    borderDash: [],
-                    borderDashOffset: 0.0,
-                    borderJoinStyle: 'miter',
-                    borderWidth: 1,
-                    pointBorderColor: "rgba(75,192,192,1)",
-                    pointBackgroundColor: "#fff",
-                    pointBorderWidth: 1,
-                    pointHoverRadius: 5,
-                    pointHoverBackgroundColor: "rgba(75,192,192,1)",
-                    pointHoverBorderColor: "rgba(220,220,220,1)",
-                    pointHoverBorderWidth: 2,
-                    pointRadius: 1,
-                    pointHitRadius: 10,
-                    data: test2,
-                    spanGaps: false
-                }
+                // {
+                //     label: "Data Set Two",
+                //     fill: true,
+                //     lineTension: 0.3,
+                //     backgroundColor: "rgba(75,192,192,0.4)",
+                //     borderColor: "rgba(75,192,192,1)",
+                //     borderCapStyle: 'butt',
+                //     borderDash: [],
+                //     borderDashOffset: 0.0,
+                //     borderJoinStyle: 'miter',
+                //     borderWidth: 1,
+                //     pointBorderColor: "rgba(75,192,192,1)",
+                //     pointBackgroundColor: "#fff",
+                //     pointBorderWidth: 1,
+                //     pointHoverRadius: 5,
+                //     pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                //     pointHoverBorderColor: "rgba(220,220,220,1)",
+                //     pointHoverBorderWidth: 2,
+                //     pointRadius: 1,
+                //     pointHitRadius: 10,
+                //     data: test2,
+                //     spanGaps: false
+                // }
+
             ]
         }
     });
@@ -88,7 +100,7 @@ var test2  = data.line[1]
 
       var currentURL = window.location.origin;
 
-  $.ajax({ url: currentURL + "/chartData" , method: "GET"})
+  $.ajax({ url: currentURL + "/chartDataPie" , method: "GET"})
 
   .done(function(data){
 
@@ -98,6 +110,16 @@ var test2  = data.line[1]
 
     console.log(data)
   
+
+  var chartObjData = [
+
+
+
+
+  ]
+
+
+
 
 var test = data.pie
     var pieChartExample = new Chart(PIECHARTEXMPLE, {
