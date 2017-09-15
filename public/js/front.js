@@ -117,4 +117,82 @@ $(document).ready(function () {
         window.open($(this).attr("href"));
     });
 
+
+
+
+$("#newItemInput").on("click", function() {
+
+
+event.preventDefault();
+
+    var newItem = {
+      type: $("#type").val().trim(),
+      msrp: $("#msrp").val().trim(),
+      seller_price: $("#sellerPrice").val().trim(),
+      size: $("#size").val().trim(),
+      quantity: $("#quantity").val().trim()
+    };
+
+$.ajax({
+    method:"POST",
+    url: "/newItem",
+    data:newItem
+})
+
+
+  })
+
+
+
+$("#newClientInput").on("click", function() {
+
+event.preventDefault();
+console.log("hi")
+    var newClient = {
+      name: $("#name").val().trim(),
+      address: $("#address").val().trim(),
+      city: $("#city").val().trim(),
+      state: $("#state").val().trim(),
+      zip: $("#zipcode").val().trim()
+    };
+
+$.ajax({
+    method:"POST",
+    url: "/newClient",
+    data:newClient
+})
+
+
+  })
+
+
+
+
+
+
+
+
+     var currentURL = window.location.origin;
+
+
+//   $.ajax({ url: currentURL + "/currentInventory" , method: "GET"})
+
+//   .done(function(data){
+
+// console.log(data)
+
+
+// });
+
+//        var currentURL = window.location.origin;
+
+
+//   $.ajax({ url: currentURL + "/currentClients" , method: "GET"})
+
+//   .done(function(data){
+
+
+
+// });
+
 });

@@ -2,6 +2,15 @@ module.exports = function(sequelize, DataTypes) {
 
   var Shoe = sequelize.define("Shoe", {
     
+  subBrand:{
+     type: DataTypes.STRING,
+      allowNull: true,
+      validate: {
+        len: [1, 60]
+      }
+  },
+
+
     type: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -32,7 +41,12 @@ module.exports = function(sequelize, DataTypes) {
     timestamps: false
   }); // end of Shoe table
 
-  
+  // Shoe.associate = function(models) {
+  //   Shoe.belongsTo(models.Order, {
+  //     foreignKey: {
+  //       allowNull: false
+  //     }
+  //   });
 
   return Shoe;
 };

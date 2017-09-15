@@ -12,13 +12,135 @@ $(document).ready(function () {
         POLARCHARTEXMPLE  = $('#polarChartExample');
 
 
+<<<<<<< HEAD
+
+ var currentURL = window.location.origin;
+
+
+  $.ajax({ url: currentURL + "/chartDataLine" , method: "GET"})
+
+  .done(function(data){
+
+var Profits = []
+
+
+
+var testObject = [ {
+
+date: "01",
+profit: 0
+
+},
+
+{
+
+date: "02",
+profit: 0
+
+},
+
+{
+date: "03",
+profit: 0
+
+},
+{
+date: "04",
+profit: 0
+
+},
+{
+date: "05",
+profit: 0
+
+},
+{
+date: "06",
+profit: 0
+
+},
+{
+date: "07",
+profit: 0
+
+},
+{
+date: "08",
+profit: 0
+
+},
+{
+date: "09",
+profit: 0
+
+},
+{
+date: "10",
+profit: 0
+
+},
+{
+date: "11",
+profit: 0
+
+},
+{
+date: "12",
+profit: 0
+},
+]
+
+
+    for (var i = data.length - 1; i >= 0; i--) {
+
+        var shoeProfit =  data[i].Shoe.seller_price - data[i].Shoe.msrp;
+
+        console.log(shoeProfit)
+
+        var date = data[i].date_order_placed
+
+        console.log(date)
+       var month = date.substring(5, 7);
+
+
+       for (var j = testObject.length - 1; j >= 0; j--) {
+           if (month === testObject[j].date) {
+
+            // console.log(j)
+        testObject[j].profit += shoeProfit;
+
+
+            // testArray.splice(i,0,profit);
+
+           }
+
+       }
+
+       // console.log(testObject[8].profit)
+    }
+
+
+for(i=0; i < testObject.length; i++)
+
+{
+console.log(testObject[i].profit)
+
+Profits.push(testObject[i].profit)
+
+}
+
+
+
+
+=======
+>>>>>>> master
     var lineChartExample = new Chart(LINECHARTEXMPLE, {
         type: 'line',
         data: {
             labels: ["January", "February", "March", "April", "May", "June", "July"],
             datasets: [
                 {
-                    label: "Data Set One",
+                    label: "Profits",
                     fill: true,
                     lineTension: 0.3,
                     backgroundColor: "rgba(51, 179, 90, 0.38)",
@@ -37,7 +159,11 @@ $(document).ready(function () {
                     pointHoverBorderWidth: 2,
                     pointRadius: 1,
                     pointHitRadius: 10,
+<<<<<<< HEAD
+                    data: Profits,
+=======
                     data: [50, 20, 40, 31, 32, 22, 10],
+>>>>>>> master
                     spanGaps: false
                 },
                 {
@@ -67,14 +193,43 @@ $(document).ready(function () {
         }
     });
 
+<<<<<<< HEAD
+});
+
+
+      var currentURL = window.location.origin;
+
+     
+
+  $.ajax({ url: currentURL + "/chartDataPie" , method: "GET"})
+
+  .done(function(data){
+
+ var Brands = []
+ var Sales = []
+    console.log(data)
+  
+  for (var i = data.length - 1; i >= 0; i--) {
+
+
+
+    if(Brands.indexOf(data[i].Shoe.subBrand) === -1)
+    {
+    Brands.push(data[i].Shoe.subBrand)
+
+    }
+
+}
+
+
+ var test = [20, 40, 40, 50]
+
+=======
+>>>>>>> master
     var pieChartExample = new Chart(PIECHARTEXMPLE, {
         type: 'doughnut',
         data: {
-            labels: [
-                "First",
-                "Second",
-                "Third"
-            ],
+            labels:Brands,
             datasets: [
                 {
                     data: [300, 50, 100],
@@ -220,3 +375,10 @@ $(document).ready(function () {
 
 
 });
+<<<<<<< HEAD
+
+
+
+    
+=======
+>>>>>>> master
