@@ -6,9 +6,16 @@ module.exports = function(sequelize, DataTypes) {
     
     address: DataTypes.STRING,
 
+
+    city:DataTypes.STRING,
+
+    state:DataTypes.STRING,
+
+
+    zipcode:DataTypes.STRING,
     phone: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       validate: {
         len: [10]
       }
@@ -16,7 +23,7 @@ module.exports = function(sequelize, DataTypes) {
     
     email: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       len: [3, 150]
     }, // end of email
 

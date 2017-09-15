@@ -33,7 +33,7 @@ module.exports = function(sequelize, DataTypes) {
     });
 
       
-  Order.hasMany(models.Shoe, {
+  Order.belongsTo(models.Shoe, {
       foreignKey: {
         allowNull: false
       }

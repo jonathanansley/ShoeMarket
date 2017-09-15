@@ -23,18 +23,18 @@ module.exports = function(app) {
   });
 
   // cms route loads cms.html
-  app.get("/forms", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/forms.html"));
-  });
+  // app.get("/forms", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/forms.html"));
+  // });
 
   // blog route loads blog.html
-  app.get("/charts", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/charts.html"));
+  app.get("/orders", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/Order.html"));
   });
 
   // authors route loads author-manager.html
-  app.get("/tables", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/author-manager.html"));
-  });
+  // app.get("/tables", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/author-manager.html"));
+  // });
 
 };
