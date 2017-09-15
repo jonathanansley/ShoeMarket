@@ -1,15 +1,19 @@
 {
-  "name": "examples",
+  "name": "post-author-joins",
   "version": "1.0.0",
-  "description": "Examples introducing Mocha and Chai.",
-  "main": "index.js",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "test": "mocha"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^3.0.0"
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mysql2": "^1.3.6",
+    "sequelize": "^4.3.1"
   }
 }
