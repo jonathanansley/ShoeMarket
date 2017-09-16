@@ -166,7 +166,70 @@ $.ajax({
   })
 
 
+$("#newClientInput").on("click", function() {
 
+event.preventDefault();
+console.log("hi")
+    var newClient = {
+      name: $("#name").val().trim(),
+      address: $("#address").val().trim(),
+      city: $("#city").val().trim(),
+      state: $("#state").val().trim(),
+      zip: $("#zipcode").val().trim()
+    };
+
+$.ajax({
+    method:"POST",
+    url: "/newClient",
+    data:newClient
+})
+
+
+  })
+
+
+
+
+$("#newClientInput").on("click", function() {
+
+event.preventDefault();
+console.log("hi")
+    var newClient = {
+      name: $("#name").val().trim(),
+      address: $("#address").val().trim(),
+      city: $("#city").val().trim(),
+      state: $("#state").val().trim(),
+      zip: $("#zipcode").val().trim()
+    };
+
+$.ajax({
+    method:"POST",
+    url: "/newClient",
+    data:newClient
+})
+
+
+  })
+
+
+$("#newOrderInput").on("click", function() {
+
+event.preventDefault();
+    var newOrder = {
+      date: $("#date").val().trim(),
+      comment: $("#comment").val().trim(),
+      ClientId: $("#clientId").val().trim(),
+      ShoeId: $("#shoeId").val().trim(),
+    };
+
+$.ajax({
+    method:"POST",
+    url: "/newOrder",
+    data:newOrder
+})
+
+
+  })
 
 
 
