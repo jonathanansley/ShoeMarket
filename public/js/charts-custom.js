@@ -12,7 +12,6 @@ $(document).ready(function () {
         POLARCHARTEXMPLE  = $('#polarChartExample');
 
 
-<<<<<<< HEAD
 
  var currentURL = window.location.origin;
 
