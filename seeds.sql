@@ -28,7 +28,7 @@ VALUES  (1, 'Jordan', 'Jordan 2', 10, 1, 159, 225),
                 (6,  'Lebron','LeBron', 13, 1, 220, 320),
         (7, 'KD', 'KD', 14, 1, 250, 350),
         (8, 'Kyrie', 'Kyrie', 13, 1, 190, 290),
-        (9,  'Jordan', 'Jordan 3', 12, 1, 190, 290);
+        (9,  'Jordan', 'Jordan 3', 12, 1, 190, 290),
         (10,  'Jordan','Jordan 10', 11, 1, 200, 300);
 --
 
