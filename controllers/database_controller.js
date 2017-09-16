@@ -33,7 +33,9 @@ module.exports = function(app) {
       
     }).then(function(dbItem) {
       // We have access to the new todo as an argument inside of the callback function
-      res.json(dbItem);
+      // res.json(dbItem);
+            res.redirect("/forms")
+
     });
   });
 
@@ -55,11 +57,31 @@ module.exports = function(app) {
       
     }).then(function(dbClient) {
       // We have access to the new todo as an argument inside of the callback function
-      res.json(dbClient);
+      // res.json(dbClient);
+      res.redirect("/tables")
     });
   });
 
 
+
+app.post("/newOrder", function(req, res) {
+    console.log(req.body);
+    // create takes an argument of an object describing the item we want to
+    // insert into our table. In this case we just we pass in an object with a text
+    // and complete property (req.body)
+    db.Client.create({
+
+      date_order_placed: req.body.date,
+      comment: req.body.comment,
+      clientId:req.body.clientId,
+      shoeId:req.body.shoeId,
+      
+    }).then(function(dbOrder) {
+      // We have access to the new todo as an argument inside of the callback function
+      // res.json(dbClient);
+      res.redirect("/orders")
+    });
+  });
 
 app.get("/tables", function(req,res){
 
