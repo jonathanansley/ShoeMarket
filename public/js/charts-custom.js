@@ -22,8 +22,6 @@ $(document).ready(function () {
 
 var Profits = []
 
-
-
 var testObject = [ {
 
 date: "01",
@@ -158,7 +156,7 @@ Profits.push(testObject[i].profit)
                     data: Profits,
                     spanGaps: false
                 },
-             
+
             ]
         }
     });
@@ -169,7 +167,7 @@ Profits.push(testObject[i].profit)
 
       var currentURL = window.location.origin;
 
-     
+
 
   $.ajax({ url: currentURL + "/chartDataPie" , method: "GET"})
 
@@ -178,7 +176,7 @@ Profits.push(testObject[i].profit)
  var Brands = []
  var Sales = []
     console.log(data)
-  
+
   for (var i = data.length - 1; i >= 0; i--) {
 
 
